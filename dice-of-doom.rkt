@@ -1,0 +1,29 @@
+#lang racket
+(require 2htdp/universe 2htdp/image)
+
+(define (start)
+  (big-bang (initial-state)
+    (on-key handle-keys)
+    (to-draw render)
+    (stop-when end? render-end)))
+
+;;Main structs
+(struct dice-world (source board game-tree))
+(struct territory (index player dice x y))
+(struct game (board player moves))
+(struct move (action game-tree))
+;;(struct board (territories  players turn))
+;;(struct turn (player moves))
+
+
+;;Start main functions
+  ;;Start on-key
+(define (handle-keys w key)
+  (cond [(key=? key "right") highlight-next]
+        [(key=? key "left") highlight-previous]
+        [(key=? key "\r") select-territory]
+        [(key=? key "d") deselect-territory]
+        [(key=? key "p") pass-turn]))
+  ;;End on-key
+
+;;End main functions
