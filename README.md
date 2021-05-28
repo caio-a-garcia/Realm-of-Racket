@@ -1,2 +1,2 @@
 # DrRacket
- Projects from "Realm of Racket" and some closely related stuff.
+ Projects and exercises from "Realm of Racket" plus tic tac toe.
