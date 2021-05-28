@@ -1,3 +1,0 @@
-#lang racket
-(struct ttt (board moves))
-(struct action (player position))
